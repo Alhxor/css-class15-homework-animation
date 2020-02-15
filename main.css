@@ -27,57 +27,110 @@
 
 .first {
   margin-right: -18px;
-  /* transform properties */
   transform-origin: left;
-  /* spin animation properties */
   animation-name: first;
 }
 
 .second {
-  /* transform properties */
   transform-origin: right;
-  /* spin animation properties */
   animation-name: second;
 }
 
 .third {
-  /* transform properties */
   transform-origin: right;
-  /* spin animation properties */
   animation-name: third;
 }
 
 .fourth {
-  /* transform properties */
   transform-origin: right;
-  /* spin animation properties */
   animation-name: fourth;
 }
 
 @keyframes first {
-  0% { transform: rotate(0deg); }
-  26%, 34%, 100% { transform: rotate(360deg) }
-  30% { transform: rotate(390deg) }
+  /* rotate */
+  0% {
+    transform: rotate(0deg);
+  }
+  26% {
+    transform: rotate(360deg);
+  }
+  /* bounce */
+  30% {
+    transform: rotate(390deg);
+  }
+  /* wait */
+  34%,
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes second {
-  0%, 8%, 26% { transform: rotate(0deg); }
-  4% { transform: rotate(-30deg); }
-  38%, 46%, 88% { transform: rotate(-180deg); }
-  42% { transform: rotate(-210deg); }
-  100% { transform: rotate(-360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  4% { /* bounce from previous iteration */
+    transform: rotate(-30deg);
+  }
+  8%,
+  26% {
+    transform: rotate(0deg);
+  }
+  38% { /* rotate forward */
+    transform: rotate(-180deg);
+  }
+  42% { /* bounce */
+    transform: rotate(-210deg);
+  }
+  46%,
+  88% {
+    transform: rotate(-180deg);
+  }
+  100% { /* rotate back */
+    transform: rotate(-360deg);
+  }
 }
 
 @keyframes third {
-  0%, 38% { transform: rotate(0deg); }
-  50%, 58%, 76% { transform: rotate(180deg); }
-  54% { transform: rotate(210deg); }
-  88%, 96%, 100% { transform: rotate(360deg); }
-  92% { transform: rotate(390deg); }
+  0%,
+  38% {
+    transform: rotate(0deg);
+  }
+  50% { /* rotate forward */
+    transform: rotate(180deg);
+  }
+  54% { /* bounce */
+    transform: rotate(210deg);
+  }
+  58%,
+  76% {
+    transform: rotate(180deg);
+  }
+  88% { /* rotate back */
+    transform: rotate(360deg);
+  }
+  92% { /* bounce */
+    transform: rotate(390deg);
+  }
+  96%,
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes fourth {
-  0%, 50% { transform: rotate(0deg); }
-  76%, 84%, 100% { transform: rotate(-360deg); }
-  80% { transform: rotate(-390deg); }
+  0%,
+  50% {
+    transform: rotate(0deg);
+  }
+  76% { /* rotate */
+    transform: rotate(-360deg);
+  }
+  80% { /* bounce */
+    transform: rotate(-390deg);
+  }
+  84%,
+  100% {
+    transform: rotate(-360deg);
+  }
 }
